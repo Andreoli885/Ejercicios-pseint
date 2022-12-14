@@ -1,0 +1,144 @@
+Ejercicio 1: Generar un algoritmo el cual debe permitir ingresar hasta 10 números y calcular el promedio de los números ingresados.
+
+Ejercicio 2: Generar un algoritmo el cual permite ingresar una lista de 5 números, se debe ordenarlos de menor a mayor.
+
+Ejercicio 3: Crear un programa que permita ingresar un nombre y una cantidad numérica para que así después el programa escriba este nombre tantas veces como su cantidad ingresada. Utilizar la función MIENTRAS.
+
+Ejercicio 4: Diseñar un algoritmo que pida por teclado tres números; si el primero es negativo, debe imprimir la multiplicación de los tres y si no lo es, imprimirá la suma.
+
+Ejercicio 5: Determinar si un alumno aprueba o reprueba un curso, sabiendo que aprobará si su promedio de tres calificaciones es mayor o igual a 4.0; reprueba en caso contrario. Deberá permitir ingresar las tres calificaciones y luego calcular su promedio.
+
+////////////////////////////////////////////////////////////////////
+Ejercicio 1
+
+Algoritmo Promedios
+    Definir cant,cont,prom como real
+    cont = 0
+    Repetir
+
+
+    Escribir 'cuantos numeros quiere ingresar? solo hasta 10 números'
+    leer cant
+    Si cant>=0 y cant <=10
+    Dimension arreglo(cant)
+
+SiNo
+    Escribir 'No es un numero válido'
+Fin Si
+Hasta Que cant<=10
+    para i<-1 Hasta  cant con paso 1 Hacer
+        Escribir 'Ingrese un numero entre el 0 y 101'
+        leer num
+        arreglo(i) <-num
+    FinPara
+    para j<-1 hasta cant con paso 1 hacer
+        cont<-cont+arreglo(j)
+    FinPara
+    prom<-cont/cant
+
+    Escribir 'Resultado de la suma ' cont
+    Escribir 'El promedio es '        prom
+
+FinAlgoritmo
+////////////////////////////////////////////////////////////////////
+Ejercicio 2 
+Algoritmo sin_titulo
+    Dimension vector(10)
+    cont = 1
+    Repetir
+        Escribir 'Ingrese un numero'
+        leer num
+		
+        Si num >= 0 y num <= 101 Entonces
+            vector(cont) = num
+            cont = cont + 1
+        SiNo
+            Escribir 'No es un numero válido'
+        Fin Si
+    Hasta Que cont = 6
+	
+	varTemp=0
+    para i = 1 Hasta 9 hacer
+        Para j = 1 Hasta 9 Hacer
+            Si vector(j) > vector(j+1)Entonces
+                varTemp = vector(j)
+                vector(j) = vector(j+1)
+                vector(j+1) = varTemp
+            SiNo
+            FinSi
+        FinPara
+    FinPara
+	
+   
+    Repetir
+        Escribir vector(cont)
+        cont = cont + 1
+    Hasta Que cont = 11
+FinAlgoritmo
+
+
+////////////////////////////////////////////////////////////////////
+Ejercicio 3
+
+Algoritmo Contador
+	Definir nombr Como Caracter
+	Definir cant,cont Como Entero
+	
+	cont=0
+	
+	Escribir 'ingrese el nombre'
+	leer nombr
+	
+	Escribir 'ingrese la cantidad de veces que quiera que se repita'
+	leer cant
+	
+	
+	Mientras cont<>cant Hacer
+		Escribir nombr
+		cont=cont+1
+	Fin Mientras
+	
+FinAlgoritmo
+
+////////////////////////////////////////////////////////////////////
+Algoritmo ej4
+    Definir n1,n2,n3,resultado como real
+		Escribir "Introduce el primer numero"
+		Leer numero1
+		Escribir "Introduce el segundo numero"
+		Leer numero2
+		Escribir "Introduce el tercer numero"
+		Leer numero3
+		
+		Si (numero1<0) Entonces
+			resultado<-numero1*numero2*numero3
+		Sino
+			resultado<-numero1+numero2+numero3
+		FinSi
+		Escribir resultado
+	
+FinAlgoritmo
+
+////////////////////////////////////////////////////////////////////
+	
+Ejercicio 5
+
+Algoritmo ej5
+    Definir n1,n2,n3,promedio Como Real
+		Escribir "Introduce la primer nota"
+		Leer nota1
+		Escribir "Introduce la segunda nota"
+		Leer nota2
+		Escribir "Introduce la tercer nota"
+		Leer nota3
+		
+		promedio<-nota1+nota2+nota3/3
+		Si (promedio>=4) Entonces
+			Escribir 'Aprobado' promedio
+		Sino
+			Escribir 'Desaprobado' promedio
+		FinSi
+	
+FinAlgoritmo
+
+////////////////////////////////////////////////////////////////////
